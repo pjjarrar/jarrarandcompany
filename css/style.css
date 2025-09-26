@@ -841,6 +841,17 @@ body {
         gap: 2rem;
         text-align: center;
     }
+    
+    .mission-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
     .stats {
         grid-template-columns: 1fr;
@@ -907,7 +918,8 @@ html {
 .team-hero,
 .service-hero,
 .bids-hero,
-.safety-hero {
+.safety-hero,
+.story-hero {
     background: linear-gradient(135deg, #141B2C 0%, #1a2332 100%);
     color: white;
     padding: 140px 0 80px;
@@ -918,7 +930,8 @@ html {
 .team-hero-content h1,
 .service-hero-content h1,
 .bids-hero-content h1,
-.safety-hero-content h1 {
+.safety-hero-content h1,
+.story-hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -928,11 +941,108 @@ html {
 .team-hero-content p,
 .service-hero-content p,
 .bids-hero-content p,
-.safety-hero-content p {
+.safety-hero-content p,
+.story-hero-content p {
     font-size: 1.25rem;
     opacity: 0.9;
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* Our Story Page Styles */
+.story-mission {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.mission-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #141B2C;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.mission-text p {
+    font-size: 1.125rem;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.family-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.family-photo:hover {
+    transform: scale(1.02);
+}
+
+.story-values {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.value-card {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #CF142B 0%, #B01224 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 25px rgba(207, 20, 43, 0.3);
+}
+
+.value-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #141B2C;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* Service Page Layouts */
