@@ -44,7 +44,7 @@ window.addEventListener('scroll', () => {
     } else {
         // Show top bar and move navbar below it
         topBar.style.transform = 'translateY(0)';
-        navbar.style.top = '40px';
+        navbar.style.top = '28px';
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         navbar.style.boxShadow = 'none';
     }
