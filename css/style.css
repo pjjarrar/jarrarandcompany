@@ -733,6 +733,14 @@ body {
     .top-bar {
         display: none;
     }
+    
+    .navbar {
+        top: 0;
+    }
+    
+    .service-hero {
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -745,7 +753,7 @@ body {
     }
     
     .nav-container {
-        padding: 15px 5px;
+        padding: 15px 20px;
     }
 
     .nav-menu {
@@ -851,6 +859,28 @@ body {
     .values-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    
+    .technology-showcase {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .benefit-icon {
+        margin: 0 auto;
+    }
+    
+    .capability-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem;
     }
 
     .stats {
@@ -1043,6 +1073,314 @@ html {
     color: #666;
     line-height: 1.6;
     margin: 0;
+}
+
+/* Highlight Link Styling */
+.highlight-link {
+    color: #CF142B;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid #CF142B;
+    transition: all 0.3s ease;
+}
+
+.highlight-link:hover {
+    color: #B01224;
+    border-bottom-color: #B01224;
+    background-color: rgba(207, 20, 43, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Enhanced Technology Section */
+.technology-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.technology-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.tech-feature {
+    background: white;
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #CF142B 0%, #141B2C 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tech-feature:hover::before {
+    transform: scaleX(1);
+}
+
+.tech-feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.tech-visual {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tech-icon-large {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #CF142B 0%, #B01224 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 15px 35px rgba(207, 20, 43, 0.3);
+    transition: all 0.3s ease;
+}
+
+.tech-feature:hover .tech-icon-large {
+    transform: scale(1.1);
+    box-shadow: 0 20px 45px rgba(207, 20, 43, 0.4);
+}
+
+.tech-icon-large i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.tech-visual h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #141B2C;
+    margin: 0;
+}
+
+.tech-feature p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* BIM Process Section */
+.bim-process {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.process-content {
+    margin-top: 3rem;
+}
+
+.process-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.process-intro p {
+    font-size: 1.25rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #CF142B 0%, #B01224 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(207, 20, 43, 0.3);
+}
+
+.benefit-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.benefit-content {
+    flex: 1;
+}
+
+.benefit-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #141B2C;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.benefit-content p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.benefit-content .advantage {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #CF142B;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #495057;
+    margin-top: 1rem;
+}
+
+.benefit-content .advantage strong {
+    color: #141B2C;
+    font-weight: 600;
+}
+
+/* VDC Capabilities Section */
+.vdc-capabilities {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.capabilities-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.capability-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.capability-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #CF142B 0%, #141B2C 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.capability-item:hover::before {
+    transform: scaleX(1);
+}
+
+.capability-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.capability-icon {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #CF142B 0%, #B01224 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(207, 20, 43, 0.3);
+    transition: all 0.3s ease;
+}
+
+.capability-item:hover .capability-icon {
+    transform: scale(1.1);
+    box-shadow: 0 20px 45px rgba(207, 20, 43, 0.4);
+}
+
+.capability-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.capability-content {
+    flex: 1;
+}
+
+.capability-content h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #141B2C;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.capability-content p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.advantage {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #CF142B;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #495057;
+}
+
+.advantage strong {
+    color: #141B2C;
+    font-weight: 600;
 }
 
 /* Service Page Layouts */

@@ -34,17 +34,22 @@ document.addEventListener('click', (e) => {
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     const topBar = document.querySelector('.top-bar');
+    const isMobile = window.innerWidth <= 768;
     
     if (window.scrollY > 100) {
         // Hide top bar and move navbar to top
-        topBar.style.transform = 'translateY(-100%)';
-        navbar.style.top = '0';
+        if (!isMobile) {
+            topBar.style.transform = 'translateY(-100%)';
+            navbar.style.top = '0';
+        }
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
     } else {
         // Show top bar and move navbar below it
-        topBar.style.transform = 'translateY(0)';
-        navbar.style.top = '28px';
+        if (!isMobile) {
+            topBar.style.transform = 'translateY(0)';
+            navbar.style.top = '28px';
+        }
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         navbar.style.boxShadow = 'none';
     }
