@@ -31,27 +31,99 @@ document.addEventListener('click', (e) => {
 });
 
 // Navbar scroll effect
-window.addEventListener('scroll', () => {
+// window.addEventListener('scroll', () => {
+//     const navbar = document.querySelector('.navbar');
+//     const topBar = document.querySelector('.top-bar');
+//     const isMobile = window.innerWidth <= 768;
+    
+//     if (window.scrollY > 100) {
+
+//         if (!isMobile) {
+//             topBar.style.transform = 'translateY(-100%)';
+//             navbar.style.top = '0';
+//         } else {
+
+//             navbar.style.top = '0';
+//         }
+//         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+//         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+//     } else {
+
+//         if (!isMobile) {
+//             topBar.style.transform = 'translateY(0)';
+//             navbar.style.top = '28px';
+//         } else {
+
+//             navbar.style.top = '0';
+//         }
+//         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+//         navbar.style.boxShadow = 'none';
+//     }
+// });
+
+// Wait for the page to fully load before running the script
+document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. Put all the logic into a single, named function
+    function handleNavbarPosition() {
+        const navbar = document.querySelector('.navbar');
+        const topBar = document.querySelector('.top-bar');
+
+        // A good practice to prevent errors if elements don't exist
+        if (!navbar || !topBar) {
+            return;
+        }
+
+        const isMobile = window.innerWidth <= 768;
+        const isScrolled = window.scrollY > 100;
+
+        if (isScrolled) {
+            // Logic for when the page is scrolled down
+            if (!isMobile) {
+                topBar.style.transform = 'translateY(-100%)';
+            }
+            navbar.style.top = '0'; // Navbar is always at the top when scrolled
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            // Logic for when the page is at the top
+            if (!isMobile) {
+                topBar.style.transform = 'translateY(0)';
+                navbar.style.top = '28px'; // Position below the top bar
+            } else {
+                 navbar.style.top = '0'; // On mobile, navbar is always at the top
+            }
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
+    }
+
+    // 2. Add event listeners for BOTH scroll and resize
+    window.addEventListener('scroll', handleNavbarPosition);
+    window.addEventListener('resize', handleNavbarPosition);
+
+    // 3. Run the function once on page load to set the initial state correctly
+    handleNavbarPosition();
+});
+
+// Handle resize events to ensure proper mobile behavior
+window.addEventListener('resize', () => {
     const navbar = document.querySelector('.navbar');
     const topBar = document.querySelector('.top-bar');
     const isMobile = window.innerWidth <= 768;
     
-    if (window.scrollY > 100) {
-        // Hide top bar and move navbar to top
-        if (!isMobile) {
-            topBar.style.transform = 'translateY(-100%)';
-            navbar.style.top = '0';
-        }
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    if (isMobile) {
+        // On mobile, hide top bar and keep navbar at top
+        topBar.style.display = 'none';
+        navbar.style.top = '0';
+        navbar.style.position = 'fixed';
+        // Force immediate positioning to prevent spacing
+        navbar.style.transform = 'translateZ(0)';
     } else {
-        // Show top bar and move navbar below it
-        if (!isMobile) {
-            topBar.style.transform = 'translateY(0)';
-            navbar.style.top = '28px';
-        }
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+        // On desktop, show top bar and position navbar below it
+        topBar.style.display = 'block';
+        navbar.style.top = '28px';
+        navbar.style.position = 'fixed';
     }
 });
 
@@ -129,6 +201,25 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+    
+    // Initialize mobile behavior on page load
+    const navbar = document.querySelector('.navbar');
+    const topBar = document.querySelector('.top-bar');
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // On mobile, hide top bar and keep navbar at top
+        topBar.style.display = 'none';
+        navbar.style.top = '0';
+        // Fix any scroll position issues on mobile
+        if (window.scrollY > 0) {
+            window.scrollTo(0, 0);
+        }
+    } else {
+        // On desktop, show top bar and position navbar below it
+        topBar.style.display = 'block';
+        navbar.style.top = '28px';
+    }
 });
 
 // Counter animation for stats

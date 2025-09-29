@@ -731,15 +731,119 @@ body {
 
 @media (max-width: 768px) {
     .top-bar {
-        display: none;
+        display: none !important;
     }
     
     .navbar {
-        top: 0;
+        top: 0 !important;
+        position: fixed;
+    }
+    
+    /* Fix mobile navbar spacing issues */
+    body {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Ensure hero section starts at top on mobile */
+    .hero {
+        margin-top: 0 !important;
+        padding-top: 80px;
     }
     
     .service-hero {
         margin-top: 0;
+        padding-top: 80px;
+        background: #141B2C !important;
+    }
+    
+    body {
+        padding-top: 0;
+    }
+    
+    /* Ensure no top spacing on mobile */
+    .service-hero,
+    .hero-section,
+    .service-overview,
+    .benefits-section,
+    .capabilities-section,
+    .industries-served,
+    .why-choose-us,
+    .cta-section {
+        margin-top: 0;
+    }
+    
+    /* Mobile hero backgrounds - solid dark blue */
+    .service-hero,
+    .team-hero,
+    .bids-hero,
+    .safety-hero,
+    .story-hero {
+        background: #141B2C !important;
+        background-image: none !important;
+        background-gradient: none !important;
+    }
+    
+    /* Center hero text on mobile only */
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-title {
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    /* Hide hero background images on mobile */
+    .hero-background,
+    .hero-image {
+        display: none !important;
+    }
+    
+    /* Ensure hero overlay is also hidden on mobile */
+    .hero-overlay {
+        display: none !important;
+    }
+    
+    /* Force solid dark blue background on mobile for all hero sections */
+    section.service-hero,
+    section.team-hero,
+    section.bids-hero,
+    section.safety-hero,
+    section.story-hero {
+        background: #141B2C !important;
+        background-image: none !important;
+    }
+    
+    /* Main hero section (index page) - mobile background image */
+    section.hero {
+        background: #141B2C;
+        background-image: url('../images/Hero-image-mobile.jpg') !important;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    /* Fix any potential spacing issues */
+    main,
+    .main-content {
+        margin-top: 0;
+        padding-top: 0;
     }
 }
 
@@ -759,7 +863,7 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 110px;
+        top: 95px;
         flex-direction: column;
         background-color: white;
         width: 100%;
@@ -828,11 +932,15 @@ body {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .btn {
-        width: 100%;
-        max-width: 300px;
+        width: auto;
+        min-width: 160px;
+        max-width: 220px;
+        padding: 10px 20px;
+        text-align: center;
     }
 
     .section-header h2 {
@@ -2060,7 +2168,149 @@ html {
     }
     
     .btn {
-        width: 100%;
-        max-width: 300px;
+        width: auto;
+        min-width: 160px;
+        max-width: 220px;
+        padding: 10px 20px;
+        text-align: center;
+    }
+}
+
+/* Bids Listing Styles */
+.bids-listing-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.bids-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.bids-header h2 {
+    font-size: 2.5rem;
+    color: #141B2C;
+    margin-bottom: 1rem;
+}
+
+.bids-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bid-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #CF142B;
+}
+
+.bid-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.bid-header h3 {
+    font-size: 1.4rem;
+    color: #141B2C;
+    margin: 0;
+}
+
+.bid-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.bid-status.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.bid-status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.bid-details {
+    margin-bottom: 1.5rem;
+}
+
+.bid-details p {
+    margin: 0.5rem 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.bid-description {
+    margin-bottom: 1.5rem;
+}
+
+.bid-description p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.bid-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.bid-date {
+    color: #888;
+}
+
+.bid-deadline {
+    color: #CF142B;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .bids-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .bid-card {
+        padding: 1.5rem;
+    }
+    
+    .bid-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .bid-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
 }
