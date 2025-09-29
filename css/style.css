@@ -1236,6 +1236,9 @@ html {
     align-items: center;
     justify-content: center;
     box-shadow: 0 8px 25px rgba(207, 20, 43, 0.3);
+    margin: 0 auto 1.5rem auto;
+    font-size: 2rem;
+    color: white;
 }
 
 .benefit-icon i {
@@ -1439,6 +1442,33 @@ html {
 .image-placeholder p {
     opacity: 0.9;
     font-size: 1rem;
+}
+
+/* Fabrication Images */
+.overview-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.fabrication-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fabrication-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.fabrication-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
 }
 
 .team-section {
@@ -1747,6 +1777,7 @@ html {
     border: 1px solid #f0f0f0;
     position: relative;
     overflow: hidden;
+    margin-bottom: 10px;
 }
 
 .capability-card::before,
@@ -1792,6 +1823,20 @@ html {
     gap: 2rem;
     margin-top: 3rem;
 }
+
+.process-timeline-container {
+    background: white;
+    padding: 2rem 0.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
 
 .timeline-item {
     text-align: center;
@@ -1881,6 +1926,15 @@ html {
     .image-placeholder {
         transform: none;
         padding: 2rem 1rem;
+    }
+    
+    .overview-images {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .fabrication-img {
+        height: 200px;
     }
     
     .cta-buttons {
