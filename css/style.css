@@ -1352,6 +1352,123 @@ html {
     color: white;
 }
 
+/* Capability card icon centering */
+.capability-card .capability-icon {
+    margin: 0 auto 1.5rem auto;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #CF142B 0%, #B01224 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(207, 20, 43, 0.3);
+    transition: all 0.3s ease;
+}
+
+.capability-card .capability-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Industries Showcase - Horizontal Layout */
+.industries-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.industry-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.industry-item {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #CF142B;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.industry-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left-color: #141B2C;
+}
+
+.industry-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #CF142B 0%, #B01224 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.industry-item:hover .industry-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(207, 20, 43, 0.3);
+}
+
+.industry-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.industry-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #141B2C;
+    margin-bottom: 0.5rem;
+}
+
+.industry-content p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Responsive Design for Industries */
+@media (max-width: 768px) {
+    .industry-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .industry-item {
+        padding: 1.5rem;
+    }
+    
+    .industry-icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+    }
+    
+    .industry-icon i {
+        font-size: 1.25rem;
+    }
+    
+    .industry-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .industry-content p {
+        font-size: 0.9rem;
+    }
+}
+
 .capability-content {
     flex: 1;
 }
