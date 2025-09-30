@@ -787,18 +787,32 @@ body {
     /* Center hero text on mobile only */
     .hero-content {
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     
     .hero-text {
         text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;
     }
     
     .hero-title {
         text-align: center;
+        margin: 0 auto;
+        width: 100%;
     }
     
     .hero-subtitle {
         text-align: center;
+        margin: 0 auto;
+        width: 100%;
     }
     
     .hero-buttons {
@@ -807,6 +821,9 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
     }
     
     /* Hide hero background images on mobile */
@@ -2196,8 +2213,18 @@ html {
 .bids-header p {
     font-size: 1.1rem;
     color: #666;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
+}
+
+.bids-header a {
+    color: #CF142B;
+    text-decoration: none;
+}
+
+.bids-header a:hover {
+    color: #B01224;
+    text-decoration: none;
 }
 
 .bids-grid {
