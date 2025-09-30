@@ -1660,6 +1660,20 @@ html {
     position: relative;
 }
 
+.service-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 .image-placeholder {
     background: linear-gradient(135deg, #CF142B 0%, #B01224 100%);
     color: white;
