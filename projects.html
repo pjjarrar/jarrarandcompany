@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - Jarrar & Company</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span class="top-bar-text"><i class="bi bi-telephone"></i> (832) 467-4750</span>
+                <span class="top-bar-text"><i class="bi bi-envelope"></i> mjarrar@jarrarandcompany.com</span>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-text"><i class="bi bi-geo-alt"></i> Houston, TX</span>
+                <span class="top-bar-text"><i class="bi bi-clock"></i> Mon-Fri: 7AM-5PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/Main-Logo.png" alt="Jarrar & Company Logo" class="logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#services" class="nav-link dropdown-toggle">Services <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="commercial-plumbing.html" class="dropdown-link">Commercial Plumbing</a></li>
+                        <li><a href="engineering.html" class="dropdown-link">Design-build & Engineering</a></li>
+                        <li><a href="prefab.html" class="dropdown-link">Pre-fabrication</a></li>
+                        <li><a href="site-utilities.html" class="dropdown-link">Site-utilities</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#about" class="nav-link dropdown-toggle">About Us <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ourstory.html" class="dropdown-link">Our Story</a></li>
+                        <li><a href="team.html" class="dropdown-link">Our Team</a></li>
+                        <li><a href="safety-quality.html" class="dropdown-link">Safety & Quality</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="bids.html" class="nav-link">Bids</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+17135550123" class="contact-btn">
+                    <i class="bi bi-telephone"></i>
+                    Contact Us
+                </a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Hero Section -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="projects-hero-content">
+                <h1>Our Portfolio of Work</h1>
+                <p>Decades of Proven Performance on Commercial, Civic, and Educational Projects Across Houston</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="education">Education & Athletic</button>
+                <button class="filter-btn" data-filter="civic">Civic & Government</button>
+                <button class="filter-btn" data-filter="commercial">Commercial & Retail</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section class="projects-gallery">
+        <div class="container">
+            <div class="projects-grid">
+                
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/midland-lee-high-school.jpg" alt="MIDLAND LEE HIGH SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>MIDLAND LEE HIGH SCHOOL</h3>
+                        <p class="project-category">25-12 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="images/projects/gcp-new-caney.jpg" alt="GCP NEW CANEY" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>GCP NEW CANEY</h3>
+                        <p class="project-category">25-11 Commercial & Retail</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/ncisd-new-administration-builiding.jpg" alt="NCISD NEW ADMINISTRATION BUILIDING" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>NCISD NEW ADMINISTRATION BUILIDING</h3>
+                        <p class="project-category">25-10 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/ncisd-new-caney-highlands-middle-school.jpg" alt="NCISD NEW CANEY HIGHLANDS MIDDLE SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>NCISD NEW CANEY HIGHLANDS MIDDLE SCHOOL</h3>
+                        <p class="project-category">25-09 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/lamar-cisd-hs-8.jpg" alt="LAMAR CISD HS #8" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>LAMAR CISD HS #8</h3>
+                        <p class="project-category">25-08 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-arnold-middle-school-renovations.jpg" alt="CFISD ARNOLD MIDDLE SCHOOL RENOVATIONS" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD ARNOLD MIDDLE SCHOOL RENOVATIONS</h3>
+                        <p class="project-category">25-07 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/am-chs-add-reno.jpg" alt="A&M CHS ADD & RENO" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>A&M CHS ADD & RENO</h3>
+                        <p class="project-category">25-06 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cy-ranch-hs-reno-cy-fair-isd.jpg" alt="CY-RANCH HS RENO, CY-FAIR ISD" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CY-RANCH HS RENO, CY-FAIR ISD</h3>
+                        <p class="project-category">25-05 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/oak-ridge-9th-reno-conroe-isd.jpg" alt="OAK RIDGE 9TH RENO, CONROE ISD" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>OAK RIDGE 9TH RENO, CONROE ISD</h3>
+                        <p class="project-category">25-04 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-kahla-middle-school.jpg" alt="CFISD KAHLA MIDDLE SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD KAHLA MIDDLE SCHOOL</h3>
+                        <p class="project-category">25-03 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-hopper-middle-school.jpg" alt="CFISD HOPPER MIDDLE SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD HOPPER MIDDLE SCHOOL</h3>
+                        <p class="project-category">25-03 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-anthony-middle-school.jpg" alt="CFISD ANTHONY MIDDLE SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD ANTHONY MIDDLE SCHOOL</h3>
+                        <p class="project-category">25-03 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/conroe-isd-new-caney-creek-9th-grade.jpg" alt="CONROE ISD NEW CANEY CREEK 9TH GRADE" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CONROE ISD NEW CANEY CREEK 9TH GRADE</h3>
+                        <p class="project-category">25-02 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/conroe-isd-junior-high-school.jpg" alt="CONROE ISD JUNIOR HIGH SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CONROE ISD JUNIOR HIGH SCHOOL</h3>
+                        <p class="project-category">25-01 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="civic">
+                    <div class="project-image">
+                        <img src="images/projects/san-jacinto-museum.jpg" alt="SAN JACINTO MUSEUM" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SAN JACINTO MUSEUM</h3>
+                        <p class="project-category">25-00 Civic & Government</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/friendswood-high-school-add-reno.jpg" alt="FRIENDSWOOD HIGH SCHOOL ADD & RENO" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>FRIENDSWOOD HIGH SCHOOL ADD & RENO</h3>
+                        <p class="project-category">24-16 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/spring-branch-isd-sherwood-elem.jpg" alt="SPRING BRANCH ISD SHERWOOD ELEM" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SPRING BRANCH ISD SHERWOOD ELEM</h3>
+                        <p class="project-category">24-14 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/ncisd-new-caney-elementary-school.jpg" alt="NCISD- NEW CANEY ELEMENTARY SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>NCISD- NEW CANEY ELEMENTARY SCHOOL</h3>
+                        <p class="project-category">24-13 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/katy-transportation-ag-center.jpg" alt="KATY TRANSPORTATION & AG CENTER" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KATY TRANSPORTATION & AG CENTER</h3>
+                        <p class="project-category">24-12 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/humble-isd-summerwood-elem-school.jpg" alt="HUMBLE ISD-SUMMERWOOD ELEM SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HUMBLE ISD-SUMMERWOOD ELEM SCHOOL</h3>
+                        <p class="project-category">24-11 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/spring-branch-isd-ag-science-center.jpg" alt="SPRING BRANCH ISD AG SCIENCE CENTER" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SPRING BRANCH ISD AG SCIENCE CENTER</h3>
+                        <p class="project-category">24-10 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/katy-isd-elementary-school-48.jpg" alt="KATY ISD ELEMENTARY SCHOOL #48" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KATY ISD ELEMENTARY SCHOOL #48</h3>
+                        <p class="project-category">24-09 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="images/projects/infinite-forge-international.jpg" alt="INFINITE FORGE INTERNATIONAL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>INFINITE FORGE INTERNATIONAL</h3>
+                        <p class="project-category">24-08 Commercial & Retail</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/katy-isd-elementary-school-47.jpg" alt="KATY ISD ELEMENTARY SCHOOL #47" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KATY ISD ELEMENTARY SCHOOL #47</h3>
+                        <p class="project-category">24-07 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/fbisd-mission-bend-elemen-rebuild.jpg" alt="FBISD MISSION BEND ELEMEN REBUILD" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>FBISD MISSION BEND ELEMEN REBUILD</h3>
+                        <p class="project-category">24-06 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="images/projects/sst-kuykendahl-phase-1.jpg" alt="SST KUYKENDAHL PHASE 1" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SST KUYKENDAHL PHASE 1</h3>
+                        <p class="project-category">24-05 Commercial & Retail</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-post-elem-school-renovation.jpg" alt="CFISD - POST ELEM. SCHOOL RENOVATION" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD - POST ELEM. SCHOOL RENOVATION</h3>
+                        <p class="project-category">24-04 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-cy-springs-hs-renovation.jpg" alt="CFISD - CY SPRINGS H.S. RENOVATION" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD - CY SPRINGS H.S. RENOVATION</h3>
+                        <p class="project-category">24-03 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="civic">
+                    <div class="project-image">
+                        <img src="images/projects/kids-meals.jpg" alt="KIDS MEALS" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KIDS MEALS</h3>
+                        <p class="project-category">24-02 Civic & Government</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/tomball-isd-high-school-no-3.jpg" alt="TOMBALL ISD- HIGH SCHOOL NO. 3" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>TOMBALL ISD- HIGH SCHOOL NO. 3</h3>
+                        <p class="project-category">24-01 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-robison-tipps-es-renovation.jpg" alt="CFISD ROBISON & TIPPS ES RENOVATION" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD ROBISON & TIPPS ES RENOVATION</h3>
+                        <p class="project-category">23-14 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/humble-isd-middle-school-no-11.jpg" alt="HUMBLE I.S.D. - MIDDLE SCHOOL No. 11" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HUMBLE I.S.D. - MIDDLE SCHOOL No. 11</h3>
+                        <p class="project-category">23-13 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/willis-isd-middle-school-no-3.jpg" alt="WILLIS I.S.D. - MIDDLE SCHOOL No. 3" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>WILLIS I.S.D. - MIDDLE SCHOOL No. 3</h3>
+                        <p class="project-category">23-12 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/hitchcock-isd-hitchcock-high-school.jpg" alt="HITCHCOCK ISD-HITCHCOCK HIGH SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HITCHCOCK ISD-HITCHCOCK HIGH SCHOOL</h3>
+                        <p class="project-category">23-10 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/new-caney-isd-west-fork-hs-phase-2.jpg" alt="NEW CANEY I.S.D.-WEST FORK H.S. PHASE 2" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>NEW CANEY I.S.D.-WEST FORK H.S. PHASE 2</h3>
+                        <p class="project-category">23-09 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/hisd-mance-park-middle-school-reno.jpg" alt="HISD MANCE PARK MIDDLE SCHOOL RENO" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HISD MANCE PARK MIDDLE SCHOOL RENO</h3>
+                        <p class="project-category">23-08 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="images/projects/chicken-n-pickle.jpg" alt="CHICKEN N PICKLE" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CHICKEN N PICKLE</h3>
+                        <p class="project-category">23-05 Commercial & Retail</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/lamar-lcisd-elem-school-33.jpg" alt="LAMAR LCISD ELEM SCHOOL # 33" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>LAMAR LCISD ELEM SCHOOL # 33</h3>
+                        <p class="project-category">23-03 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="civic">
+                    <div class="project-image">
+                        <img src="images/projects/oscar-johnson-jr-community-center.jpg" alt="OSCAR JOHNSON JR COMMUNITY CENTER" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>OSCAR JOHNSON JR COMMUNITY CENTER</h3>
+                        <p class="project-category">23-01 Civic & Government</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/tomball-pre-kindergarten-building.jpg" alt="TOMBALL PRE-KINDERGARTEN BUILDING" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>TOMBALL PRE-KINDERGARTEN BUILDING</h3>
+                        <p class="project-category">22-18 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/ilt-msg-ramirez-k-8.jpg" alt="ILT MSG RAMIREZ K-8" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ILT MSG RAMIREZ K-8</h3>
+                        <p class="project-category">22-17 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/lamar-cisd-james-steenbergen-ms.jpg" alt="LAMAR CISD JAMES STEENBERGEN MS" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>LAMAR CISD JAMES STEENBERGEN MS</h3>
+                        <p class="project-category">22-16 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/alvin-elementary-school-replacement.jpg" alt="ALVIN ELEMENTARY SCHOOL REPLACEMENT" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ALVIN ELEMENTARY SCHOOL REPLACEMENT</h3>
+                        <p class="project-category">22-15 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/huntsville-isd-mance-park-ms-cafeteria.jpg" alt="HUNTSVILLE ISD MANCE PARK MS CAFETERIA" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HUNTSVILLE ISD MANCE PARK MS CAFETERIA</h3>
+                        <p class="project-category">22-14 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="images/projects/kelsey-seybold-pearland.jpg" alt="KELSEY SEYBOLD PEARLAND" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KELSEY SEYBOLD PEARLAND</h3>
+                        <p class="project-category">22-13 Commercial & Retail</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="images/projects/kelsey-seybold-clear-creek.jpg" alt="KELSEY SEYBOLD CLEAR CREEK" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KELSEY SEYBOLD CLEAR CREEK</h3>
+                        <p class="project-category">22-12 Commercial & Retail</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="commercial">
+                    <div class="project-image">
+                        <img src="images/projects/kelsey-seybold-summer-creek.jpg" alt="KELSEY SEYBOLD SUMMER CREEK" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KELSEY SEYBOLD SUMMER CREEK</h3>
+                        <p class="project-category">22-11 Commercial & Retail</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/huntsville-isd-elementary-school-additions.jpg" alt="HUNTSVILLE ISD ELEMENTARY SCHOOL ADDITIONS" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HUNTSVILLE ISD ELEMENTARY SCHOOL ADDITIONS</h3>
+                        <p class="project-category">22-10 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="civic">
+                    <div class="project-image">
+                        <img src="images/projects/fort-bend-esd-7-fire-station-no-52.jpg" alt="FORT BEND ESD #7 FIRE STATION NO. 52" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>FORT BEND ESD #7 FIRE STATION NO. 52</h3>
+                        <p class="project-category">22-09 Civic & Government</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/kingwood-hs-fema-canopy-work.jpg" alt="KINGWOOD HS FEMA CANOPY WORK" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KINGWOOD HS FEMA CANOPY WORK</h3>
+                        <p class="project-category">22-08 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/kingwood-park-hs-renovations-additions.jpg" alt="KINGWOOD PARK HS RENOVATIONS & ADDITIONS" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KINGWOOD PARK HS RENOVATIONS & ADDITIONS</h3>
+                        <p class="project-category">22-07 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/kingwood-hs-renovations-additions.jpg" alt="KINGWOOD HS RENOVATIONS & ADDITIONS" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KINGWOOD HS RENOVATIONS & ADDITIONS</h3>
+                        <p class="project-category">22-06 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="civic">
+                    <div class="project-image">
+                        <img src="images/projects/baytown-utility-services-building.jpg" alt="BAYTOWN UTILITY SERVICES BUILDING" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>BAYTOWN UTILITY SERVICES BUILDING</h3>
+                        <p class="project-category">22-05 Civic & Government</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/lamar-cisd-elementary-32-ag-barn-3.jpg" alt="LAMAR CISD ELEMENTARY #32 & AG BARN #3" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>LAMAR CISD ELEMENTARY #32 & AG BARN #3</h3>
+                        <p class="project-category">22-04 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-hoover-moore-pope-elem-school-reno.jpg" alt="CFISD – HOOVER, MOORE, & POPE ELEM. SCHOOL RENO" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD – HOOVER, MOORE, & POPE ELEM. SCHOOL RENO</h3>
+                        <p class="project-category">22-03 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/iltexas-windmill-phase-5.jpg" alt="ILTEXAS WINDMILL PHASE 5" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ILTEXAS WINDMILL PHASE 5</h3>
+                        <p class="project-category">22-02 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/alvin-isd-nickols-mock-elementary-21.jpg" alt="ALVIN ISD – NICKOLS-MOCK ELEMENTARY #21" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ALVIN ISD – NICKOLS-MOCK ELEMENTARY #21</h3>
+                        <p class="project-category">22-01 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/iltexas-bg-ramirez-k-8.jpg" alt="ILTEXAS BG RAMIREZ K-8" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ILTEXAS BG RAMIREZ K-8</h3>
+                        <p class="project-category">21-05 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/willis-isd-lucas-ms-gym-additions.jpg" alt="WILLIS ISD – LUCAS MS & GYM ADDITIONS" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>WILLIS ISD – LUCAS MS & GYM ADDITIONS</h3>
+                        <p class="project-category">21-04 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-new-administration-building-pkg-c.jpg" alt="CFISD – NEW ADMINISTRATION BUILDING – PKG C" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD – NEW ADMINISTRATION BUILDING – PKG C</h3>
+                        <p class="project-category">21-01C Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/cfisd-visual-performing-arts-center-pkg-b.jpg" alt="CFISD – VISUAL & PERFORMING ARTS CENTER – PKG B" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CFISD – VISUAL & PERFORMING ARTS CENTER – PKG B</h3>
+                        <p class="project-category">21-01B Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/fbisd-mercer-don-cook-stadium.jpg" alt="FBISD. MERCER & DON COOK STADIUM" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>FBISD. MERCER & DON COOK STADIUM</h3>
+                        <p class="project-category">20-16 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/barbers-hill-intermediate-school-north.jpg" alt="BARBERS HILL INTERMEDIATE SCHOOL NORTH" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>BARBERS HILL INTERMEDIATE SCHOOL NORTH</h3>
+                        <p class="project-category">20-15 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/goose-creek-cisd-stuart-career-high-school.jpg" alt="GOOSE CREEK CISD – STUART CAREER HIGH SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>GOOSE CREEK CISD – STUART CAREER HIGH SCHOOL</h3>
+                        <p class="project-category">20-14 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/new-caney-isd-high-school-3.jpg" alt="NEW CANEY ISD HIGH SCHOOL #3" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>NEW CANEY ISD HIGH SCHOOL #3</h3>
+                        <p class="project-category">20-12 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/goose-creek-cisd-new-junior-high-school-6.jpg" alt="GOOSE CREEK CISD NEW JUNIOR HIGH SCHOOL #6" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>GOOSE CREEK CISD NEW JUNIOR HIGH SCHOOL #6</h3>
+                        <p class="project-category">20-11 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/sbisd-northbrook-high-school-addit-reno.jpg" alt="SBISD NORTHBROOK HIGH SCHOOL ADDIT. & RENO" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SBISD NORTHBROOK HIGH SCHOOL ADDIT. & RENO</h3>
+                        <p class="project-category">20-10 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/sbisd-stratford-high-school-addit-reno.jpg" alt="SBISD STRATFORD HIGH SCHOOL ADDIT. & RENO" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SBISD STRATFORD HIGH SCHOOL ADDIT. & RENO</h3>
+                        <p class="project-category">20-09 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/clear-creek-isd-clear-view-high-school.jpg" alt="CLEAR CREEK ISD CLEAR VIEW HIGH SCHOOL" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CLEAR CREEK ISD CLEAR VIEW HIGH SCHOOL</h3>
+                        <p class="project-category">20-07 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/lsc-montgomery-new-student-service-center.jpg" alt="LSC MONTGOMERY NEW STUDENT SERVICE CENTER" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>LSC MONTGOMERY NEW STUDENT SERVICE CENTER</h3>
+                        <p class="project-category">20-06 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/fort-bend-isd-bid-package-45.jpg" alt="FORT BEND ISD BID PACKAGE 45" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>FORT BEND ISD BID PACKAGE 45</h3>
+                        <p class="project-category">20-04 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/tomball-isd-memorial-high-school-addit-reno.jpg" alt="TOMBALL ISD MEMORIAL HIGH SCHOOL ADDIT. & RENO" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>TOMBALL ISD MEMORIAL HIGH SCHOOL ADDIT. & RENO</h3>
+                        <p class="project-category">20-03 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="education">
+                    <div class="project-image">
+                        <img src="images/projects/spring-branch-isd-spring-wood-high-school-reno.jpg" alt="SPRING BRANCH ISD SPRING WOOD HIGH SCHOOL RENO" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>SPRING BRANCH ISD SPRING WOOD HIGH SCHOOL RENO</h3>
+                        <p class="project-category">19-08 Education & Athletic</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="civic">
+                    <div class="project-image">
+                        <img src="images/projects/city-of-houston-fire-station-55.jpg" alt="CITY OF HOUSTON FIRE STATION #55" class="project-img">
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CITY OF HOUSTON FIRE STATION #55</h3>
+                        <p class="project-category">18-04 Civic & Government</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="projects-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Have a Project Like This?</h2>
+                <p>Let's discuss how Jarrar & Company can bring your vision to life with our proven expertise and commitment to excellence.</p>
+                <a href="index.html#contact" class="btn btn-primary">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="bids.html">Bids</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="commercial-plumbing.html">Commercial Plumbing</a></li>
+                        <li><a href="engineering.html">Design-build & Engineering</a></li>
+                        <li><a href="prefab.html">Pre-fabrication</a></li>
+                        <li><a href="site-utilities.html">Site-utilities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="bi bi-telephone"></i> (832) 467-4750</p>
+                        <p><i class="bi bi-printer"></i> (832) 467-1471</p>
+                        <p><i class="bi bi-envelope"></i> mjarrar@jarrarandcompany.com</p>
+                        <p><i class="bi bi-geo-alt"></i> 9119 Emmott Rd, Houston, TX 77040</p>
+                        <p><i class="bi bi-clock"></i> Mon-Fri: 7AM-5PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jarrar & Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>
