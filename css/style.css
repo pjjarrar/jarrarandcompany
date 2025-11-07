@@ -266,6 +266,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 30%;
 }
 
 .hero-overlay {
@@ -274,8 +275,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(20, 27, 44, 0.8) 0%, rgba(20, 27, 44, 0.6) 100%);
-    z-index: -1;
+    background: rgba(20, 27, 44, 0.35);
+    z-index: 1;
 }
 
 .hero-content {
@@ -283,9 +284,10 @@ body {
     color: white;
     max-width: 800px;
     padding: 0 20px;
-    z-index: 1;
+    z-index: 2;
     margin-left: 5%;
     margin-right: auto;
+    position: relative;
 }
 
 .hero-title {
@@ -793,6 +795,8 @@ body {
         width: 100%;
         margin: 0 auto;
         padding: 0 20px;
+        position: relative;
+        z-index: 2 !important;
     }
     
     .hero-text {
@@ -826,13 +830,18 @@ body {
         margin-top: 10px;
     }
     
-    /* Hide hero background images on mobile */
-    .hero-background,
+    /* Hide hero image on mobile but keep background container for overlay */
     .hero-image {
         display: none !important;
     }
     
-    /* Ensure hero overlay is also hidden on mobile */
+    /* Keep hero background visible on mobile for overlay positioning */
+    .hero-background {
+        display: block !important;
+        z-index: 0 !important;
+    }
+    
+    /* Hide hero overlay on mobile - using ::before pseudo-element instead */
     .hero-overlay {
         display: none !important;
     }
@@ -847,13 +856,26 @@ body {
         background-image: none !important;
     }
     
-    /* Main hero section (index page) - mobile background image */
+    /* Main hero section (index page) - mobile background image with overlay */
     section.hero {
         background: #141B2C;
-        background-image: url('../images/Hero-image-mobile.jpg') !important;
+        background-image: url('../images/hero-image2.jpg') !important;
         background-size: cover;
-        background-position: center;
+        background-position: center 30%;
         background-repeat: no-repeat;
+        position: relative;
+    }
+    
+    /* Add overlay tint on mobile using pseudo-element */
+    section.hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(20, 27, 44, 0.35);
+        z-index: 1;
     }
     
     /* Fix any potential spacing issues */
@@ -1102,6 +1124,58 @@ html {
     opacity: 0.9;
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* Company Photo Section */
+.company-photo-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.company-photo-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.company-photo-text {
+    padding-right: 2rem;
+}
+
+.company-photo-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #141B2C;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.company-photo-text p {
+    font-size: 1.125rem;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.company-photo-image {
+    position: relative;
+}
+
+.company-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+.company-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
 }
 
 /* Our Story Page Styles */
@@ -2575,5 +2649,36 @@ html {
     
     .cta-content p {
         font-size: 1.1rem;
+    }
+    
+    .company-photo-section {
+        padding: 60px 0;
+    }
+    
+    .company-photo-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .company-photo-text {
+        padding-right: 0;
+        order: 2;
+    }
+    
+    .company-photo-text h2 {
+        font-size: 2rem;
+    }
+    
+    .company-photo-text p {
+        font-size: 1rem;
+    }
+    
+    .company-photo-image {
+        order: 1;
+    }
+    
+    .company-photo {
+        border-radius: 12px;
     }
 }
