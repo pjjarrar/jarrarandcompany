@@ -262,3 +262,33 @@ const statsSection = document.querySelector('.stats');
 if (statsSection) {
     statsObserver.observe(statsSection);
 }
+
+// Floating Admin Dashboard Button
+// Show floating button on public pages when user is logged in
+(function initFloatingAdminButton() {
+    // Check if we're on admin.html page
+    const isAdminPage = window.location.pathname.includes('admin.html');
+    
+    // Don't show button on admin page
+    if (isAdminPage) {
+        return;
+    }
+    
+    // Check if user is logged in (has authToken in localStorage)
+    const authToken = localStorage.getItem('authToken');
+    
+    if (authToken) {
+        // Create floating button element
+        const floatingBtn = document.createElement('a');
+        floatingBtn.href = 'admin.html';
+        floatingBtn.className = 'floating-admin-btn show';
+        floatingBtn.title = 'Admin Dashboard';
+        floatingBtn.setAttribute('aria-label', 'Go to Admin Dashboard');
+        
+        // Add icon and text
+        floatingBtn.innerHTML = '<i class="bi bi-speedometer2"></i><span>Back to Dashboard</span>';
+        
+        // Append to body
+        document.body.appendChild(floatingBtn);
+    }
+})();
