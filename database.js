@@ -72,23 +72,27 @@ function createTables() {
 // Seed initial admin user
 function seedAdminUser() {
     return new Promise((resolve, reject) => {
-        db.get('SELECT * FROM users WHERE username = ?', ['admin'], (err, row) => {
+        const adminUsername = process.env.ADMIN_USERNAME || 'admin';
+        const adminPassword = process.env.ADMIN_PASSWORD || 'admin';
+        const adminEmail = process.env.ADMIN_EMAIL || 'admin@jarrarandcompany.com';
+        
+        db.get('SELECT * FROM users WHERE username = ?', [adminUsername], (err, row) => {
             if (err) {
                 reject(err);
                 return;
             }
             
             if (!row) {
-                const hashedPassword = bcrypt.hashSync('admin', 10);
+                const hashedPassword = bcrypt.hashSync(adminPassword, 10);
                 db.run(
                     'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
-                    ['admin', 'admin@jarrarandcompany.com', hashedPassword],
+                    [adminUsername, adminEmail, hashedPassword],
                     (err) => {
                         if (err) {
                             reject(err);
                             return;
                         }
-                        console.log('Admin user created (username: admin, password: admin)');
+                        console.log(`Admin user created (username: ${adminUsername})`);
                         resolve();
                     }
                 );

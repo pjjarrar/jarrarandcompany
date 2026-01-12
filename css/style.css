@@ -2753,6 +2753,26 @@ html {
     min-height: 1.2rem;
 }
 
+.admin-login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.admin-home-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.admin-home-link:hover {
+    color: #CF142B;
+    text-decoration: underline;
+}
+
 /* Admin Dashboard */
 .admin-dashboard {
     min-height: 100vh;
