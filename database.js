@@ -63,6 +63,22 @@ function createTables() {
                     reject(err);
                     return;
                 }
+            });
+
+            // Messages table
+            db.run(`CREATE TABLE IF NOT EXISTS messages (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                email TEXT NOT NULL,
+                phone TEXT,
+                message TEXT NOT NULL,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            )`, (err) => {
+                if (err) {
+                    console.error('Error creating messages table:', err);
+                    reject(err);
+                    return;
+                }
                 resolve();
             });
         });
@@ -75,13 +91,13 @@ function seedAdminUser() {
         const adminUsername = process.env.ADMIN_USERNAME || 'admin';
         const adminPassword = process.env.ADMIN_PASSWORD || 'admin';
         const adminEmail = process.env.ADMIN_EMAIL || 'admin@jarrarandcompany.com';
-        
+
         db.get('SELECT * FROM users WHERE username = ?', [adminUsername], (err, row) => {
             if (err) {
                 reject(err);
                 return;
             }
-            
+
             if (!row) {
                 const hashedPassword = bcrypt.hashSync(adminPassword, 10);
                 db.run(
@@ -142,7 +158,7 @@ function createBid(bid) {
             `INSERT INTO bids (title, status, estimator_name, estimator_email, bid_date, bid_time, gc_name, description)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
             [title, status, estimator_name, estimator_email, bid_date, bid_time, gc_name, description || ''],
-            function(err) {
+            function (err) {
                 if (err) {
                     reject(err);
                     return;
@@ -163,7 +179,7 @@ function updateBid(id, bid) {
                  bid_time = ?, gc_name = ?, description = ?, updated_at = CURRENT_TIMESTAMP
              WHERE id = ?`,
             [title, status, estimator_name, estimator_email, bid_date, bid_time, gc_name, description || '', id],
-            function(err) {
+            function (err) {
                 if (err) {
                     reject(err);
                     return;
@@ -181,7 +197,7 @@ function updateBid(id, bid) {
 // Delete bid
 function deleteBid(id) {
     return new Promise((resolve, reject) => {
-        db.run('DELETE FROM bids WHERE id = ?', [id], function(err) {
+        db.run('DELETE FROM bids WHERE id = ?', [id], function (err) {
             if (err) {
                 reject(err);
                 return;
@@ -269,7 +285,7 @@ function createUser(user) {
         db.run(
             'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
             [username, email, hashedPassword],
-            function(err) {
+            function (err) {
                 if (err) {
                     if (err.message.includes('UNIQUE constraint')) {
                         reject(new Error('Username or email already exists'));
@@ -289,7 +305,7 @@ function updateUser(id, user) {
     return new Promise((resolve, reject) => {
         const { username, email, password } = user;
         let query, params;
-        
+
         if (password) {
             const hashedPassword = bcrypt.hashSync(password, 10);
             query = 'UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?';
@@ -298,8 +314,8 @@ function updateUser(id, user) {
             query = 'UPDATE users SET username = ?, email = ? WHERE id = ?';
             params = [username, email, id];
         }
-        
-        db.run(query, params, function(err) {
+
+        db.run(query, params, function (err) {
             if (err) {
                 if (err.message.includes('UNIQUE constraint')) {
                     reject(new Error('Username or email already exists'));
@@ -317,10 +333,28 @@ function updateUser(id, user) {
     });
 }
 
+// Create message
+function createMessage(messageData) {
+    return new Promise((resolve, reject) => {
+        const { name, email, phone, message } = messageData;
+        db.run(
+            'INSERT INTO messages (name, email, phone, message) VALUES (?, ?, ?, ?)',
+            [name, email, phone || '', message],
+            function (err) {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve({ id: this.lastID, ...messageData });
+            }
+        );
+    });
+}
+
 // Delete user
 function deleteUser(id) {
     return new Promise((resolve, reject) => {
-        db.run('DELETE FROM users WHERE id = ?', [id], function(err) {
+        db.run('DELETE FROM users WHERE id = ?', [id], function (err) {
             if (err) {
                 reject(err);
                 return;
@@ -349,6 +383,7 @@ module.exports = {
     getUserByUsernameOrEmail,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    createMessage
 };
 

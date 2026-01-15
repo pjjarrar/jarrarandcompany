@@ -35,7 +35,7 @@ document.addEventListener('click', (e) => {
 //     const navbar = document.querySelector('.navbar');
 //     const topBar = document.querySelector('.top-bar');
 //     const isMobile = window.innerWidth <= 768;
-    
+
 //     if (window.scrollY > 100) {
 
 //         if (!isMobile) {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 topBar.style.transform = 'translateY(0)';
                 navbar.style.top = '28px'; // Position below the top bar
             } else {
-                 navbar.style.top = '0'; // On mobile, navbar is always at the top
+                navbar.style.top = '0'; // On mobile, navbar is always at the top
             }
             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             navbar.style.boxShadow = 'none';
@@ -111,7 +111,7 @@ window.addEventListener('resize', () => {
     const navbar = document.querySelector('.navbar');
     const topBar = document.querySelector('.top-bar');
     const isMobile = window.innerWidth <= 768;
-    
+
     if (isMobile) {
         // On mobile, hide top bar and keep navbar at top
         topBar.style.display = 'none';
@@ -142,38 +142,92 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Toast Notification Helper
+function showToast(title, message, type = 'success') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+
+    // Choose icon based on type
+    const iconClass = type === 'success' ? 'bi-check-circle-fill' :
+        type === 'error' ? 'bi-exclamation-circle-fill' :
+            'bi-info-circle-fill';
+
+    toast.innerHTML = `
+        <div class="toast-icon">
+            <i class="bi ${iconClass}"></i>
+        </div>
+        <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+    `;
+
+    // Add to container
+    container.appendChild(toast);
+
+    // Trigger animation
+    requestAnimationFrame(() => {
+        toast.classList.add('show');
+    });
+
+    // Remove after 5 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.remove();
+        }, 300); // Wait for transition
+    }, 5000);
+}
+
 // Form submission handling
-const contactForm = document.querySelector('.contact-form form');
+const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
-        
+
         // Get form data
         const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const phone = this.querySelector('input[type="tel"]').value;
-        const message = this.querySelector('textarea').value;
-        
-        // Basic validation
-        if (!name || !email) {
-            alert('Please fill in all required fields.');
+        const data = Object.fromEntries(formData.entries());
+
+        // Basic validation in case HTML5 validation fails
+        if (!data.name || !data.email || !data.message) {
+            showToast('Missing Information', 'Please fill in all required fields.', 'error');
             return;
         }
-        
-        // Simulate form submission
+
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
-        
-        // Simulate API call
-        setTimeout(() => {
-            alert('Thank you for your message! We\'ll get back to you soon.');
-            this.reset();
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                showToast('Message Sent', 'Thank you! We will get back to you soon.', 'success');
+                this.reset();
+            } else {
+                throw new Error(result.error || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            showToast('Sending Failed', 'Unable to send message. Please try again or call us directly.', 'error');
+        } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        }, 2000);
+        }
     });
 }
 
@@ -201,12 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-    
+
     // Initialize mobile behavior on page load
     const navbar = document.querySelector('.navbar');
     const topBar = document.querySelector('.top-bar');
     const isMobile = window.innerWidth <= 768;
-    
+
     if (isMobile) {
         // On mobile, hide top bar and keep navbar at top
         topBar.style.display = 'none';
@@ -226,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function animateCounter(element, target, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     function updateCounter() {
         start += increment;
         if (start < target) {
@@ -236,7 +290,7 @@ function animateCounter(element, target, duration = 2000) {
             element.textContent = target + '+';
         }
     }
-    
+
     updateCounter();
 }
 
@@ -268,15 +322,15 @@ if (statsSection) {
 (function initFloatingAdminButton() {
     // Check if we're on admin.html page
     const isAdminPage = window.location.pathname.includes('admin.html');
-    
+
     // Don't show button on admin page
     if (isAdminPage) {
         return;
     }
-    
+
     // Check if user is logged in (has authToken in localStorage)
     const authToken = localStorage.getItem('authToken');
-    
+
     if (authToken) {
         // Create floating button element
         const floatingBtn = document.createElement('a');
@@ -284,10 +338,10 @@ if (statsSection) {
         floatingBtn.className = 'floating-admin-btn show';
         floatingBtn.title = 'Admin Dashboard';
         floatingBtn.setAttribute('aria-label', 'Go to Admin Dashboard');
-        
+
         // Add icon and text
         floatingBtn.innerHTML = '<i class="bi bi-speedometer2"></i><span>Back to Dashboard</span>';
-        
+
         // Append to body
         document.body.appendChild(floatingBtn);
     }

@@ -6,6 +6,7 @@ const { initDatabase } = require('./database');
 const authRoutes = require('./routes/auth');
 const bidsRoutes = require('./routes/bids');
 const usersRoutes = require('./routes/users');
+const contactRoutes = require('./routes/contact');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,7 @@ app.get('/admin', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/bids', bidsRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Initialize database and start server
 initDatabase().then(() => {
