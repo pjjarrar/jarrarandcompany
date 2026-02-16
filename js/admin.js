@@ -137,7 +137,7 @@ async function loadBids() {
                     <td><span class="bid-status ${statusClass}">${escapeHtml(bid.status)}</span></td>
                     <td>${escapeHtml(bid.estimator_name)}</td>
                     <td>${date}</td>
-                    <td>${escapeHtml(bid.bid_time)}</td>
+                    <td>${formatTime(bid.bid_time)}</td>
                     <td class="admin-actions">
                         <button class="btn-icon edit-btn" data-id="${bid.id}" title="Edit">
                             <i class="bi bi-pencil"></i>
@@ -441,6 +441,16 @@ async function deleteUser(id) {
     } catch (error) {
         alert('Error deleting user: ' + error.message);
     }
+}
+
+// Format 24-hour time to 12-hour format
+function formatTime(timeStr) {
+    if (!timeStr) return '';
+    const [hours, minutes] = timeStr.split(':');
+    const h = parseInt(hours, 10);
+    const period = h >= 12 ? 'PM' : 'AM';
+    const displayHour = h === 0 ? 12 : h > 12 ? h - 12 : h;
+    return `${displayHour}:${minutes} ${period}`;
 }
 
 // Utility function to escape HTML
