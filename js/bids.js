@@ -41,7 +41,7 @@ async function loadBids() {
                         <p><strong>Estimator:</strong> ${escapeHtml(bid.estimator_name)}</p>
                         <p><strong>Email:</strong> <a href="mailto:${escapeHtml(bid.estimator_email)}">${escapeHtml(bid.estimator_email)}</a></p>
                         <p><strong>Date:</strong> ${date}</p>
-                        <p><strong>Time:</strong> ${escapeHtml(bid.bid_time)}</p>
+                        <p><strong>Time:</strong> ${formatTime(bid.bid_time)}</p>
                         <p><strong>G.C.:</strong> ${escapeHtml(bid.gc_name)}</p>
                     </div>
                     ${bid.description ? `
@@ -77,6 +77,15 @@ function formatDate(dateString) {
     } catch (error) {
         return dateString;
     }
+}
+
+function formatTime(timeStr) {
+    if (!timeStr) return '';
+    const [hours, minutes] = timeStr.split(':');
+    const h = parseInt(hours, 10);
+    const period = h >= 12 ? 'PM' : 'AM';
+    const displayHour = h === 0 ? 12 : h > 12 ? h - 12 : h;
+    return `${displayHour}:${minutes} ${period}`;
 }
 
 function escapeHtml(text) {
